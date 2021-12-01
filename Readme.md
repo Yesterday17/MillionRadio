@@ -12,6 +12,12 @@ mr-get 420
 
 脚本依赖 `curl`、`jq` 和 [annie](https://github.com/iawia002/annie)。
 
+## 讲话人检查
+
+基于文本样式的讲话人检查，防止叠轴。位于 `aegisub/speaker-check.lua`。需将文件放置到 `Aegisub` 的 `lua` 脚本目录。
+
+选中字幕第一行，点击`自动化 > Speaker Check - 讲话人检查`。如果存在叠轴或样式为 `Default` 的字幕行，会自动跳转到对应位置。
+
 ## 压制参数
 
 > 声明：由于本人对压制不甚熟悉，因此只能以个人标准随便压压
