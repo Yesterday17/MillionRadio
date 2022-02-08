@@ -25,3 +25,25 @@ mr-get 420
 ```bash
 ffmpeg -i "$VIDEO_SOURCE.mp4" -vf "ass=$SUBTITLE" -c:v libx264 -b:v 6000k -profile:v main -c:a aac -b:a 320k "$OUTPUT.mkv"
 ```
+
+## 投稿
+
+投稿使用 [sswa](https://github.com/Yesterday17/sswa) 进行，投稿模板位于 [mr.toml](templates/mr.toml)
+
+投稿用到的文件如下：
+
+```text
+# 445.txt
+num=445
+title=kraz回归！
+translators="Shopping  Neila  てい  炭酸"
+jiaodui=洗濯機P
+subtitle=xue
+date=2022-01-13
+```
+
+命令如下：
+
+```bash
+sswa upload --template mr 445.txt 445本篇.mkv 445omake.mkv
+```

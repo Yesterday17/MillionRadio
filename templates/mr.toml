@@ -1,0 +1,21 @@
+title = "【字幕】【偶像大师百万广播{{num}}回】{{title}}【MillionRADIO】"
+description = '''片源：RabbitC
+翻译：{{translators}}
+校对：{{jiaodui}}
+时间轴：{{subtitle}}
+直播日期：{{date}}
+
+{{appendix}}'''
+forward-source = "765.million"
+tid = 152
+cover = "./图/cover.png"
+dynamic-text = ""
+tags = ["田所梓", "山崎遥", "麻仓桃", "偶像大师百万广播"]
+
+[variables]
+num = "广播回数"
+title = "标题"
+translators = "翻译"
+jiaodui = "校对"
+subtitle = "时间轴"
+date = "直播日期"
