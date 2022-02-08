@@ -5,6 +5,7 @@ script_version = "1.0"
 
 function select_invalid_lines(subs, selection)
   local dialogues = {}
+  local styles = {}
 
   local start = 1
   if #selection ~= 0 then
@@ -16,6 +17,8 @@ function select_invalid_lines(subs, selection)
     if line.class == "dialogue" and not line.comment then
       line.i = i
       table.insert(dialogues, line)
+    elseif line.class == "style" then
+      styles[line.name] = true
     end
   end
 
@@ -36,7 +39,7 @@ function select_invalid_lines(subs, selection)
       layers[line.layer or "default"] = layer
     end
 
-    if line.style == "Default" then
+    if line.style == "Default" or styles[line.style] == nil then
       return {line.i}
     end
 
