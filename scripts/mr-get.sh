@@ -17,9 +17,6 @@ fi
 
 LINK="https://www.bilibili.com/video/$BVID"
 
-annie -f 64 "$LINK?p=1"
-annie -f 64 "$LINK?p=2"
-annie -f 32 "$LINK?p=3"
-annie -f 32 "$LINK?p=4"
+lux "$LINK"
 
 echo "下载完成！"

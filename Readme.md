@@ -10,7 +10,7 @@
 mr-get 420
 ```
 
-脚本依赖 `curl`、`jq` 和 [annie](https://github.com/iawia002/annie)。
+脚本依赖 `curl`、`jq` 和 [lux](https://github.com/iawia002/lux)。
 
 ## 讲话人检查
 
@@ -23,7 +23,7 @@ mr-get 420
 > 声明：由于本人对压制不甚熟悉，因此只能以个人标准随便压压
 
 ```bash
-ffmpeg -i "$VIDEO_SOURCE.mp4" -vf "ass=$SUBTITLE" -c:v libx264 -b:v 6000k -profile:v main -c:a aac -b:a 320k "$OUTPUT.mkv"
+ffmpeg -i "$VIDEO_SOURCE.mp4" -vf "ass=$SUBTITLE" -c:v h264_nvenc -b:v 6000k -profile:v main -c:a aac -b:a 320k "$OUTPUT.mkv"
 ```
 
 ## 投稿
