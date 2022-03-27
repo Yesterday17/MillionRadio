@@ -15,8 +15,6 @@ if (( "$LEN" < 60 )); then
   exit 1
 fi
 
-LINK="https://www.bilibili.com/video/$BVID"
-
-lux "$LINK"
+lux -p "$BVID"
 
 echo "下载完成！"
