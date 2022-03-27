@@ -3,18 +3,13 @@ script_description = "人不可能有两张嘴，这个脚本就是检查这个�
 script_author = "Yesterday17"
 script_version = "1.0"
 
-function select_invalid_lines(subs, selection)
+function select_invalid_lines(subs, selection, active_line)
   local dialogues = {}
   local styles = {}
 
-  local start = 1
-  if #selection ~= 0 then
-    start = selection[1]
-  end
-
   for i = 1, #subs do
     local line = subs[i]
-    if line.class == "dialogue" and not line.comment then
+    if line.class == "dialogue" and i >= active_line and not line.comment then
       line.i = i
       table.insert(dialogues, line)
     elseif line.class == "style" then
@@ -30,7 +25,7 @@ function select_invalid_lines(subs, selection)
   )
 
   local layers = {}
-  for i = start, #dialogues do
+  for i = 1, #dialogues do
     local line = dialogues[i]
 
     local layer = layers[line.layer or "default"]
