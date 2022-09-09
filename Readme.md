@@ -2,15 +2,31 @@
 
 此处收集的是 `THE IDOLM@STER MILLION RADIO!` 相关的内容。
 
-## 视频源获取
+## 视频源
 
-视频源来自兔佬，使用脚本 `scripts/mr-get.sh` 进行获取，如：
+### 静音切除
+
+视频源须自行下载，得到 `ts` 文件后通过 `cut.sh` 进行切分：
 
 ```bash
-mr-get 420
+./cut.sh 479本篇.ts
 ```
 
-脚本依赖 `curl`、`jq` 和 [lux](https://github.com/iawia002/lux)。
+可以获得切除了开头和结尾静音部分的结果。产物文件为 `mkv` 视频和用于表示与原视频切分关系的 `JSON` 。
+
+脚本依赖 `ffmpeg`、`sed`、`head`、`tail` 和 `qalc`。
+
+### 弹幕压入
+
+获得弹幕的 `ass` 文件后，`ass`、`json` 和 `mkv` 保持相同文件名（除扩展名），然后运行：
+
+```bash
+./danmaku.sh 479本篇.mkv
+```
+
+即可压制得到弹幕版。系统字体须包含 `YuGoth` 和 `MS Gothic`。`Windows` 默认自带，可以复制一份过来。
+
+脚本依赖 `ffmpeg`、`mkvmerge` 和 `jq`。
 
 ## 讲话人检查
 
