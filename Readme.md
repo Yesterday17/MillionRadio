@@ -16,6 +16,10 @@
 
 脚本依赖 `ffmpeg`、`sed`、`head`、`tail` 和 `qalc`。
 
+```bash
+brew install ffmpeg ripgrep libqalculate
+```
+
 ### 弹幕压入
 
 获得弹幕的 `ass` 文件后，`ass`、`json` 和 `mkv` 保持相同文件名（除扩展名），然后运行：
@@ -27,6 +31,10 @@
 即可压制得到弹幕版。系统字体须包含 `YuGoth` 和 `MS Gothic`。`Windows` 默认自带，可以复制一份过来。
 
 脚本依赖 `ffmpeg`、`mkvmerge` 和 `jq`。
+
+```bash
+brew install mkvtoolnix jq
+```
 
 ## 讲话人检查
 
