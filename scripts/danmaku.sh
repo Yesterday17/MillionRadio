@@ -25,7 +25,7 @@ checkBin jq       || (echo "jq was not found!"        && exit 1)
 FILE="$1"
 FILENAME="${FILE%.*}"
 FROM=$(cat "$FILENAME.json" | jq .from)
-ffmpeg -threads 32 -itsoffset "$FROM" -i "$FILE" -vf "fps=60,ass=$FILENAME.ass:fontsdir=./fonts" -c:a copy -c:v h264_nvenc -pix_fmt yuv420p "$FILENAME-danmaku.mkv"
-
+ffmpeg -itsoffset "-$FROM" -i "$FILENAME.ass" "$FILENAME_shifted.ass"
+ffmpeg -threads 32 -i "$FILE" -vf "fps=60,ass=$FILENAME_shifted.ass:fontsdir=./fonts" -c:a copy -c:v h264_nvenc -pix_fmt yuv420p "$FILENAME-danmaku.mkv"
 mkvmerge "$FILENAME-danmaku.mkv" -o "$FILENAME-弹幕版.mkv"
 rm "$FILENAME-danmaku.mkv"
